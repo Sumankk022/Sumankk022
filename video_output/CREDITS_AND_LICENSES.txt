@@ -13,3 +13,9 @@ Sound effects (Mixkit Sound Effects Free License, https://mixkit.co/license/#sfx
   Epic movie trailer whoosh impact, Movie logo intro impact, Explainer video pop whoosh
 
 All text, motion graphics, charts and animations were generated for this video.
+
+Reels (video_output/reels/Jio_IPO_Reel_Part1-3.mp4, 1080x1920)
+Same Mixkit footage, music and sound-effect sources as above; no additional third-party assets.
+No photos of Mukesh Ambani or Jio are included yet; those moments use the stock clips above.
+If you add real photos later, credit them as their license requires
+(e.g. "Photo: <author>, CC BY-SA 4.0, via Wikimedia Commons").
