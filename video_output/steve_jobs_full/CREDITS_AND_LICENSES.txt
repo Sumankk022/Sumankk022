@@ -2,13 +2,13 @@ STEVE JOBS — THE FULL STORY  ·  Founder Files
 
 === YOUTUBE CHAPTERS (paste into description) ===
 0:00 Intro: the man who lost Apple
-0:57 Chapter 1: The Curious Kid
-2:10 Chapter 2: From Garage to Giant
-3:19 Chapter 3: The Fall
-4:24 Chapter 4: The Wilderness Years
-5:27 Chapter 5: The Comeback
-7:00 Chapter 6: The Cost
-7:57 Chapter 7: The Lesson
+0:51 Chapter 1: The Curious Kid
+1:58 Chapter 2: From Garage to Giant
+3:06 Chapter 3: The Fall
+4:09 Chapter 4: The Wilderness Years
+5:12 Chapter 5: The Comeback
+6:42 Chapter 6: The Cost
+7:38 Chapter 7: The Lesson
 
 === PHOTO CREDITS (required — paste into description) ===
 Photos via Wikimedia Commons / Library of Congress / White House (public domain where noted):
@@ -69,4 +69,4 @@ Intro: 'Driving Ambition' (Ahjay Stelino) → 'Dreaming Big'. Chapter beds (Mixk
 === SOUND EFFECTS (Mixkit SFX Free License) === IDs 788 (riser), 2782 + 1143 (impacts), 1714 / 1489 / 1492 (whooshes), 498 (hit).
 
 Fonts: Inter Display & Playfair Display (SIL Open Font License).
-Narration: supplied by the channel owner — re-timed per clip to ~134 wpm (pitch preserved) with hook pauses added.
+Narration: supplied by the channel owner — used at its original speed; short pauses added after hook lines.

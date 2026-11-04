@@ -92,8 +92,8 @@ for k in range(1, 9):
     else:
         tot_p_for_rate = tot_p
     target = len(words) / TARGET_WPM * 60
-    tempo = float(np.clip(speech / max(target - tot_p_for_rate, 1), 0.86, 1.0))
-    v = load(f"v{k}.mp3", af=f"rubberband=tempo={tempo:.4f}:formant=preserved:pitchq=quality," + VOICE_FX)
+    tempo = 1.0                                  # original speed — narration used exactly as recorded
+    v = load(f"v{k}.mp3")                        # no time-stretch, no EQ/compression
     def nt(t, cuts=cuts, tempo=tempo):
         return t / tempo + sum(p for c, p in cuts if c <= t + 1e-6)
     pieces, prev = [], 0.0
