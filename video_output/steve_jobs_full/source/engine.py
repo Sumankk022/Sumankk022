@@ -38,6 +38,7 @@ def lut_for(c, lift):
     if c > 1: s = s * 0.75 + 0.25 * (3 * x ** 2 - 2 * x ** 3)
     return np.clip(s * 255 + lift, 0, 255).astype(np.float32)
 def grade(arr, g):
+    if g == "none": return np.array(arr)
     c, sat, rgb, lift = GRADES[g]
     a = lut_for(c, lift)[arr]
     if sat != 1.0:
@@ -366,6 +367,10 @@ IMG(a("the man who", d=-0.15), "mac1984", g="bw", z=(1.3, 1.45), pan=((0, -0.62)
 IMG(a("found success", d=-0.1), "pixar1998", z=(1.25, 1.12), pan=((0, 0.2), (0, 0.1)), tag="PIXAR  ·  WHITE HOUSE, 1998")
 IMG(a("and came back", d=-0.15), "redshawl", "side", z=(1.0, 1.07))
 
+# ---------------------------------------------------------------- channel ident (user's intro.mp4)
+IDENT = TL["ident"]
+shot(IDENT[0], "ext", xf=0.35, src="vid/intro.mp4")
+
 # ---------------------------------------------------------------- CH1 The Curious Kid
 a = lambda p, occ=0, edge="s", d=0.0: A(p, 1, occ, edge, d)
 CARDSHOT(1, "goldengate")
@@ -585,6 +590,8 @@ def render_shot(s_, t):
         if "dark" in s_:
             d0, d1, ta, tb = s_["dark"]; fr *= d0 + (d1 - d0) * eio((t - ta) / max(tb - ta, 0.01))
         return fr
+    if k == "ext":
+        return vid_for(id(s_), s_["src"], 0.0, 1.0, "none").frame(int(lt * FPS)).astype(np.float32)
     if k == "dark":
         return vid_for(id(s_), f"vid/{s_['bg']}.mp4", 0, 1.0, "warm").frame(int(lt * FPS)).astype(np.float32) * 0.8
     if k == "card": return render_card(s_, t, lt)
@@ -791,7 +798,8 @@ def frame_at(t, fi):
     cur = S[idx]; fr = render_shot(cur, t); lt = t - cur["t0"]
     if idx > 0 and cur["xf"] > 0 and lt < cur["xf"]:
         m = eio(lt / cur["xf"]); fr = render_shot(S[idx - 1], t) * (1 - m) + fr * m
-    fr = fr * VIG + GRAIN[fi % 4]
+    if not (cur["kind"] == "ext" and lt >= cur["xf"]):      # the ident plays untouched
+        fr = fr * VIG + GRAIN[fi % 4]
     fr *= clamp(t / 0.5) * clamp((TOTAL - t) / 1.0)
     for ft in FLASHES:
         if ft <= t < ft + 0.45: f = 1 - eo((t - ft) / 0.45); fr = fr * (1 - f) + 255 * f

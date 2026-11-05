@@ -9,7 +9,8 @@ import numpy as np
 SR = 48000
 TARGET_WPM = 134
 CARD = 3.6            # chapter card length (music only)
-END_CARD = 12.0       # room for YouTube end-screen elements
+END_CARD = 12.0
+IDENT_LEN = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", "vid/intro.mp4"], capture_output=True, text=True).stdout)       # room for YouTube end-screen elements
 os.makedirs("out", exist_ok=True)
 db = lambda x: 10 ** (x / 20)
 
@@ -149,6 +150,9 @@ for i, c in enumerate(clips):
     seg["extra"] = {k_: (a + t, b + t) for k_, (a, b) in c["extra"].items()}
     t += c["dur"]; seg["v1"] = t
     t += 0.6
+    if i == 0:                      # channel ident (user's intro.mp4) plays right after voice 1
+        IDENT = (seg["v1"] + 0.35, seg["v1"] + 0.35 + IDENT_LEN)
+        t = IDENT[1] + 0.05
     segs.append(seg)
 END0 = segs[-1]["v1"] + 0.5
 TOTAL = END0 + END_CARD
@@ -199,7 +203,9 @@ lift0, lift1 = s1["extra"]["intro_lift"]
 bed("32", 0.0, lift0 + 0.35, 0.0, -16, -23, fi=0.6, fo=0.5)
 place(music, sfx("1714"), lift1 - 1.2, db(-13))
 place(music, sfx("2782"), lift1 - 0.25, db(-7))
-bed("31", lift1 - 0.25, segs[1]["card"][0] + 1.4, 72.0, -11, -19, fi=0.05, fo=1.6)
+bed("31", lift1 - 0.25, IDENT[0] + 0.45, 72.0, -11, -19, fi=0.05, fo=0.8)
+# the ident's own sound, levelled so it sits with the narration sections
+place(music, load("vid/intro.mp4", ch=2, af="loudnorm=I=-17:TP=-2"), IDENT[0], 1.0)
 STINGS = []
 for s in segs[1:]:
     c0, c1 = s["card"]
@@ -232,7 +238,7 @@ subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "out/_mix.wav", "-af", "lou
                 "-ar", "48000", "-c:a", "pcm_s24le", "out/mix.wav"], check=True)
 save("out/voice.wav", voice)
 for s in segs: s.pop("music", None)
-json.dump(dict(segs=segs, total=TOTAL, end0=END0, card=CARD,
+json.dump(dict(ident=IDENT, segs=segs, total=TOTAL, end0=END0, card=CARD,
                chapters=[c for c in CHAPTERS if c]), open("out/timeline.json", "w"), indent=1)
 allw = sum(len(s["words"]) for s in segs)
 print(f"TOTAL {TOTAL/60:.0f}:{TOTAL%60:04.1f}  words {allw}")
