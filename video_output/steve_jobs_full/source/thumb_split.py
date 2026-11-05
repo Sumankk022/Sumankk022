@@ -28,7 +28,7 @@ def make(diagonal=True, name="thumb_full_documentary_split"):
     # vignette + darker bottom band for the text
     r = np.sqrt(((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
     img *= (1 - 0.40 * np.clip(r - 0.55, 0, 1))[..., None]
-    img *= (1 - 0.62 * np.clip((yy - 640) / 440, 0, 1) ** 1.2)[..., None]
+    img *= (1 - 0.68 * np.clip((yy - 560) / 520, 0, 1) ** 1.1)[..., None]
     base = Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).convert("RGBA")
     # glowing gold seam
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0)); gd = ImageDraw.Draw(glow)
@@ -39,9 +39,11 @@ def make(diagonal=True, name="thumb_full_documentary_split"):
     badge(base, 60, 60, "1985", fill=(20, 20, 20), col=WHITE, size=46)
     badge(base, W - 60 - (RL.tw("2010", "xb", 46, 3) + 50), 60, "2010", fill=GOLD, col=BLACK, size=46)
     # big words
-    fs = fit("FIRED.", "xb", 210, 760)
-    put(base, RL.stext("FIRED.", "xb", fs, RED, stroke=8), 70, 905, "lm")
-    fs2 = fit("LEGEND.", "xb", 210, 820)
+    put(base, RL.stext("FIRED FROM", "xb", fit("FIRED FROM", "xb", 92, 700), WHITE, stroke=6), 76, 760, "lm")
+    fs = fit("APPLE.", "xb", 220, 760)
+    put(base, RL.stext("APPLE.", "xb", fs, RED, stroke=8), 66, 905, "lm")
+    put(base, RL.stext("CAME BACK AS A", "xb", fit("CAME BACK AS A", "xb", 92, 760), WHITE, stroke=6), W - 66, 760, "rm")
+    fs2 = fit("LEGEND.", "xb", 220, 820)
     put(base, RL.stext("LEGEND.", "xb", fs2, GOLD, stroke=8), W - 60, 905, "rm")
     # centre seam label + logo
     mid_x = (top_x + bot_x) / 2
