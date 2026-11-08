@@ -210,3 +210,24 @@ Doug Belshaw (CC BY 2.0): https://commons.wikimedia.org/wiki/File%3APeople_payin
 - Add the 3 Shorts and the 1-minute video to a playlist named "Steve Jobs: The Full Story" and link the full video as the Shorts' related video.
 - Category: Education (or People & Blogs). Language: English. Made for kids: No.
 - Post the Shorts 1–2 days apart and pin a comment on each: "Full story → [link to full video]".
+
+---
+
+# Vijay Mallya — The King of Good Times (full documentary, 8:32)
+
+File: `video_output/vijay_mallya/Vijay_Mallya_King_of_Good_Times_1080p.mp4`
+
+## Title options
+1. Vijay Mallya: From King of Good Times to India's Most Controversial Businessman
+2. The Rise and Fall of Vijay Mallya | Kingfisher Airlines Collapse Explained
+3. How Kingfisher Airlines Crashed an Empire — The Vijay Mallya Story
+
+## Description
+Private jets, luxury yachts, Formula One, a cricket team and India's most glamorous airline — Vijay Mallya seemed to have everything. Then Kingfisher Airlines collapsed, thousands of crores in bank loans became the centre of a massive controversy, and Mallya left India for the United Kingdom.
+
+In this Founder Files documentary we trace the full story: the United Breweries empire, the Kingfisher Airlines dream, the Air Deccan gamble, the 2012 grounding, the legal battle in India and the UK, and the lessons every business builder should learn.
+
+(Paste chapters + photo credits from video_output/vijay_mallya/CREDITS_AND_LICENSES.txt)
+
+## Tags
+vijay mallya, kingfisher airlines, vijay mallya story, kingfisher airlines collapse, king of good times, united breweries, air deccan, vijay mallya documentary, indian business stories, business case study, founder files, rise and fall, extradition, fugitive economic offender, business lessons
