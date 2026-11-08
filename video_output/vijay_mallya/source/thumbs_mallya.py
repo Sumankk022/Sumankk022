@@ -99,7 +99,7 @@ def cover(n, bg, l1, l2, l2col, pol=None, part=None):
     pill = f"VIJAY MALLYA  ·  PART {n}"; pw = RL.tw(pill, "b", 40, 4) + 70
     d.rounded_rectangle([W / 2 - pw / 2, 90, W / 2 + pw / 2, 166], radius=38, fill=(0, 0, 0, 170), outline=GOLD + (230,), width=3)
     put(base, RL.stext(pill, "b", 40, WHITE, track=4, shadow=False), W / 2, 128, "mm")
-    if pol: base.alpha_composite(pol[0], pol[1])
+    for p_ in ([pol] if isinstance(pol, tuple) else (pol or [])): base.alpha_composite(p_[0], p_[1])
     f1 = fit(l1, "xb", 120, W - 160); w1 = RL.tw(l1, "xb", f1) + 70
     d = ImageDraw.Draw(base); d.rounded_rectangle([W / 2 - w1 / 2, 1300, W / 2 + w1 / 2, 1300 + f1 + 50], radius=20, fill=GOLD + (255,))
     put(base, RL.stext(l1, "xb", f1, BLACK, shadow=False), W / 2, 1300 + (f1 + 50) / 2, "mm")
@@ -114,7 +114,8 @@ def reels():
     cover(1, bg1, "KING OF GOOD TIMES", "WHAT WENT WRONG?", RED)
     bg2 = photo("a330c", "neutral", (W, H), 1.0, 0.25, 0)
     cover(2, bg2, "WHAT GROUNDED", "KINGFISHER AIRLINES?", WHITE,
-          pol=(polaroid("kfcounter", "faded", (330, 300), 1.1, 0.2, 0, 7, "2012: GROUNDED"), (600, 760)))
+          pol=[(polaroid("kfcounter", "faded", (300, 280), 1.1, 0.2, 0, 8, "2012: GROUNDED"), (660, 300)),
+               (polaroid("mallya_wef", "warm", (500, 600), 1.2, 0.42, -0.35, -5, "VIJAY MALLYA", lab_col=BLACK), (50, 420))])
     bg3 = vframe(26852, 4.0, (W, H))
     cover(3, bg3, "HOW DID HE END UP", "IN THE UK?", WHITE,
           pol=(polaroid("mallya_wef", "bw", (360, 400), 1.15, 0.4, -0.3, -6, "VIJAY MALLYA"), (60, 620)))
