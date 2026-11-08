@@ -1,0 +1,59 @@
+RAZORPAY IPO + BYJU'S DOWNFALL REELS · Founder File
+1080x1920 · 30 fps · H.264 + AAC 256k · loudness -14 LUFS
+
+Files
+  Razorpay_IPO_Reel.mp4      ~51 s
+  Byjus_Downfall_Reel.mp4    ~56 s
+
+Structure of each reel
+  hook (with a 0.95–1.0 s pause after it) → story → closing question →
+  riser + whoosh + impact (musical transition) → Founder File intro (vertical, 4.5 s) →
+  subscribe end card (logo from the intro, SUBSCRIBE → SUBSCRIBED click, bell) under the "Follow Founder Files…" line
+
+Narration edits (voice kept at its original speed and pitch; only pauses changed, plus light compression/EQ for punch)
+  Razorpay: pause after the hook ("…to the stock market.") lengthened 0.58 → 0.95 s; after "Now, here's the interesting part." 0.44 → 0.85 s;
+            other long gaps tightened to ~0.45 s; CTA moved after the transition + intro.
+  BYJU'S:   pause after the hook ("…watch that empire fall apart.") 0.68 → 1.0 s; NEW ~1 s pause at the turn
+            "…India's most valuable startup. [pause] But behind the massive growth…" (there was none);
+            other long gaps tightened to ~0.45 s; CTA moved after the transition + intro.
+
+=== POST CAPTIONS (edit freely) ===
+Razorpay — Razorpay is going public!
+From making online payments easier in 2014 to a SEBI-approved IPO. But the target (~$5B) is below its 2021 valuation ($7.5B). Will investors buy in?
+#razorpay #ipo #startup #fintech #india #business #stockmarket #founderfile
+
+BYJU'S — From $22 billion to insolvency
+India's most valuable startup… then delayed financials, investor disputes, mounting debt and legal battles. What went wrong?
+#byjus #startup #edtech #india #business #founderfile
+
+=== PHOTO CREDITS (CC BY / CC BY-SA need attribution: paste into the description or a pinned comment) ===
+All via Wikimedia Commons. Each CC photo is also credited on screen (top-right of the card) while it is shown.
+Razorpay reel:
+  UB City at night, Bengaluru — KshitizBathwal / Skyscape Photography, CC BY-SA 4.0
+  SEBI Bhavan — Jimmy vikas, CC BY-SA 3.0
+  BSE – Bombay Stock Exchange Building — Niyantha Shekhar, CC BY 2.0
+  Bombay stock exchange market — Jishnu12684, CC0
+  Indian 100 and 2000 rupee notes — Monito, CC BY 2.0
+  Razorpay logo — public domain (trademark of Razorpay; used for identification only)
+BYJU'S reel:
+  Byju Raveendran CEO Byju's (and cropped version) — cherian_in, CC BY 2.0
+  Byju Raveendran at BYJU's 5th Anniversary Celebration 2017 (Image 3) — RPSkokie, CC BY-SA 4.0
+  Byju Raveendran taking Asia's biggest live class, Bengaluru 2020 — M.M. Santhil, CC0
+  BYJU'S logo — public domain (trademark of Think & Learn Pvt. Ltd.; used for identification only)
+Not affiliated with Razorpay or BYJU'S.
+
+=== STOCK VIDEO (Mixkit Free License, https://mixkit.co/license/#videoFree — no attribution required) ===
+Razorpay: 47412, 21780, 35902, 9607, 42652, 18264, 15914, 6367, 22827, 23168, 47792, 47012, 47213, 45706
+BYJU'S:   30873, 26759, 26758, 48860, 47186, 47184, 45703, 23042, 9704, 47948, 45923, 46677, 18305, 46820, 15478, 5601, 4701
+
+=== MUSIC & SFX (Mixkit free licenses, no attribution required) ===
+Razorpay bed: 'Raising Me Higher' (low-pass "muffled" drop under "here's the interesting part")
+BYJU'S bed:   'Driving Ambition' → tape-stop at "But behind…" → synthesized dark drone + heartbeat (made in code)
+Finale (end card): 'Dreaming Big'
+SFX: Mixkit 788 (riser), 1714, 1489, 1491, 1492 (whooshes), 2782 + 1143 (impacts), 498 (hit).
+Pops, counter ticks, mouse clicks and the bell ding are synthesized.
+Intro ident: channel owner's own intro (audio + video).
+
+Fonts: Inter Display (SIL OFL).
+Facts are as narrated in the supplied voice-over; the "-33%" badge is 5 ÷ 7.5 from those numbers.
+Source: source/reel.py (re-time → mix → introv → render).
